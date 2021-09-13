@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscar.Designer.cs">
+      <DependentUpon>FormBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBuscar.resx">
+      <DependentUpon>FormBuscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRetirar.resx">
       <DependentUpon>FormRetirar.cs</DependentUpon>
     </EmbeddedResource>
