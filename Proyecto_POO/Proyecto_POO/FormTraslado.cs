@@ -17,18 +17,31 @@ namespace Proyecto_POO
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            FormMain f = new FormMain();
-            f.Show();
-            this.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormBuscar f = new FormBuscar();
-            f.Show();
-            this.Close();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormMain f = new FormMain();
+            f.Show();//mostrar el form del menú
+            this.Close();//cerrar este form
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

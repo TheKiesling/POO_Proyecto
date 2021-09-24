@@ -13,4 +13,4 @@ C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.exe
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.pdb
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormMain.resources
-C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormTraslado.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormModificar.resources

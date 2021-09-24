@@ -26,5 +26,12 @@ namespace Proyecto_POO
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormMain f = new FormMain();
+            f.Show();//mostrar el form del menú
+            this.Close();//cerrar este form
+        }
     }
 }

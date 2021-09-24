@@ -10,26 +10,18 @@ using System.Windows.Forms;
 
 namespace Proyecto_POO
 {
-    public partial class FormIngresoUnidadIGSS : Form
+    public partial class FormModificar : Form
     {
-        public FormIngresoUnidadIGSS()
+        public FormModificar()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-
+            FormMain f = new FormMain();
+            f.Show();//mostrar el form del menú
+            this.Close();//cerrar este form
         }
     }
 }
