@@ -10,31 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyecto_POO
 {
-    public partial class Ingreso : Form
+    public partial class FormTraslado : Form
     {
-        public Ingreso()
+        public FormTraslado()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -44,9 +24,11 @@ namespace Proyecto_POO
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            FormBuscar f = new FormBuscar();
+            f.Show();
+            this.Close();
         }
     }
 }

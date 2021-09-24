@@ -19,7 +19,14 @@ namespace Proyecto_POO
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormMain f = new FormMain();
+            f.Show();
+            this.Close();
         }
     }
 }

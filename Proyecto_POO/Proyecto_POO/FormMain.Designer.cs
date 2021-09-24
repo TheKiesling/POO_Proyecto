@@ -72,6 +72,7 @@ namespace Proyecto_POO
             this.button3.TabIndex = 2;
             this.button3.Text = "Modificar datos del Paciente";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -83,6 +84,7 @@ namespace Proyecto_POO
             this.button4.TabIndex = 3;
             this.button4.Text = "Buscar Paciente";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -94,6 +96,7 @@ namespace Proyecto_POO
             this.button5.TabIndex = 4;
             this.button5.Text = "Traslado de Paciente";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -105,6 +108,7 @@ namespace Proyecto_POO
             this.button6.TabIndex = 5;
             this.button6.Text = "Salir";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label1
             // 
@@ -113,11 +117,11 @@ namespace Proyecto_POO
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(70, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(511, 39);
+            this.label1.Size = new System.Drawing.Size(490, 38);
             this.label1.TabIndex = 6;
             this.label1.Text = "Seleccione la opción a realizar";
             // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,7 +134,7 @@ namespace Proyecto_POO
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

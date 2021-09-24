@@ -76,6 +76,12 @@
     <Compile Include="FormRetirar.Designer.cs">
       <DependentUpon>FormRetirar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTraslado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTraslado.Designer.cs">
+      <DependentUpon>FormTraslado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ingreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +99,14 @@
     <EmbeddedResource Include="FormInicioSesion.resx">
       <DependentUpon>FormInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRetirar.resx">
       <DependentUpon>FormRetirar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTraslado.resx">
+      <DependentUpon>FormTraslado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ingreso.resx">
       <DependentUpon>Ingreso.cs</DependentUpon>

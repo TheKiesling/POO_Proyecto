@@ -1,0 +1,16 @@
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\bin\Debug\Proyecto_POO.exe.config
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\bin\Debug\Proyecto_POO.exe
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\bin\Debug\Proyecto_POO.pdb
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.csproj.AssemblyReference.cache
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormBuscar.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormIngresoUnidadIGSS.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormInicioSesion.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormRetirar.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.Ingreso.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.Properties.Resources.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.csproj.GenerateResource.cache
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.csproj.CoreCompileInputs.cache
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.exe
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.pdb
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormMain.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormTraslado.resources
