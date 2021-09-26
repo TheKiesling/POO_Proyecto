@@ -85,7 +85,7 @@ namespace Proyecto_POO
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormRetirar";
-            this.Text = "Form2";
+            this.Text = "Retiro de Paciente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

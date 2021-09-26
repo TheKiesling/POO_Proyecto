@@ -55,6 +55,7 @@ namespace Proyecto_POO
             this.button6.TabIndex = 10;
             this.button6.Text = "Salir";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label2
             // 
@@ -76,7 +77,7 @@ namespace Proyecto_POO
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label1);
             this.Name = "FormInfo";
-            this.Text = "FormInfo";
+            this.Text = "Informacion";
             this.Load += new System.EventHandler(this.FormInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

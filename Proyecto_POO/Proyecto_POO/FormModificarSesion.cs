@@ -10,35 +10,25 @@ using System.Windows.Forms;
 
 namespace Proyecto_POO
 {
-    public partial class FormInicio : Form
+    public partial class FormModificarSesion : Form
     {
-        public FormInicio()
+        public FormModificarSesion()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            FormInfo info = new FormInfo();
-            info.Show();//mostrar el form del menú
-            this.Hide();//cerrar este form
-        }
-
-        private void FormInicio_Load(object sender, EventArgs e)
-        {
-
+            FormInicioSesion IS = new FormInicioSesion();
+            IS.Show();//mostrar el form del menú
+            this.Close();//cerrar este form
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FormInicioSesion IS = new FormInicioSesion();
             IS.Show();//mostrar el form del menú
-            this.Hide();//cerrar este form
+            this.Close();//cerrar este form
         }
     }
 }

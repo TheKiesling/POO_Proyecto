@@ -153,12 +153,13 @@ namespace Proyecto_POO
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(15, 341);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(391, 102);
             this.button1.TabIndex = 12;
             this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox7
@@ -231,6 +232,7 @@ namespace Proyecto_POO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(815, 449);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -253,7 +255,7 @@ namespace Proyecto_POO
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Ingreso";
-            this.Text = "Ingreso";
+            this.Text = "Ingreso de Paciente";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

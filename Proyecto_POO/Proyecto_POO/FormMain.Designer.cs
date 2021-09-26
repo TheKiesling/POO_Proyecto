@@ -40,8 +40,8 @@ namespace Proyecto_POO
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(294, 78);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 51);
@@ -52,8 +52,8 @@ namespace Proyecto_POO
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.Location = new System.Drawing.Point(294, 135);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(192, 51);
@@ -64,8 +64,8 @@ namespace Proyecto_POO
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button3.Location = new System.Drawing.Point(294, 192);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(192, 51);
@@ -76,8 +76,8 @@ namespace Proyecto_POO
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkCyan;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button4.Location = new System.Drawing.Point(294, 249);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(192, 51);
@@ -88,8 +88,8 @@ namespace Proyecto_POO
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button5.Location = new System.Drawing.Point(294, 306);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(192, 51);
@@ -100,8 +100,8 @@ namespace Proyecto_POO
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.Desktop;
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button6.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button6.Location = new System.Drawing.Point(294, 363);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(192, 51);
@@ -135,7 +135,7 @@ namespace Proyecto_POO
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormMain";
-            this.Text = "Form1";
+            this.Text = "Main";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -84,7 +84,7 @@ namespace Proyecto_POO
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FormBuscar";
-            this.Text = "FormBuscar";
+            this.Text = "Busqueda de Paciente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

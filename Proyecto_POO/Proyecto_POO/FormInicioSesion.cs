@@ -23,5 +23,19 @@ namespace Proyecto_POO
             I.Show();//mostrar el form del menú
             this.Close();//cerrar este form
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormMain m = new FormMain();
+            m.Show();//mostrar el form del menú
+            this.Close();//cerrar este form
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormModificarSesion MS = new FormModificarSesion();
+            MS.Show();//mostrar el form del menú
+            this.Hide();//cerrar este form
+        }
     }
 }

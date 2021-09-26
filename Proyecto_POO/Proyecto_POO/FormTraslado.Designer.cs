@@ -56,12 +56,13 @@ namespace Proyecto_POO
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(256, 282);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 43);
             this.button1.TabIndex = 2;
             this.button1.Text = "Traslado de paciente";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
@@ -96,6 +97,7 @@ namespace Proyecto_POO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -104,7 +106,7 @@ namespace Proyecto_POO
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "FormTraslado";
-            this.Text = "FormTraslado";
+            this.Text = "Traslado de Paciente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
