@@ -54,7 +54,9 @@ namespace Proyecto_POO
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            FormInicio I = new FormInicio();
+            I.Show();//mostrar el form del menú
+            this.Close();//cerrar este form
         }
     }
 }

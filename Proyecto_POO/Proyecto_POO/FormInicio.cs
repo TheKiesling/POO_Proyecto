@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 namespace Proyecto_POO
 {
-    public partial class FormInicioSesion : Form
+    public partial class FormInicio : Form
     {
-        public FormInicioSesion()
+        public FormInicio()
         {
             InitializeComponent();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            FormInicio I = new FormInicio();
-            I.Show();//mostrar el form del menú
-            this.Close();//cerrar este form
+
         }
     }
 }
