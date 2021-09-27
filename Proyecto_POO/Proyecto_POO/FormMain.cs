@@ -16,6 +16,17 @@ namespace Proyecto_POO
         {
             InitializeComponent();
         }
+        struct paciente
+        {
+            String nombre;
+            int edad;
+            string sexo;
+            string DPI;
+            string Enfermedad;
+            String fechadenac;
+            string noafiliacion;
+            string tipoafiliacion;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {

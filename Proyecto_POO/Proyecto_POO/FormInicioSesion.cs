@@ -16,6 +16,10 @@ namespace Proyecto_POO
         {
             InitializeComponent();
         }
+        string nombre, contraseña;
+        public string obtenernombre(){  
+            return nombre;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
