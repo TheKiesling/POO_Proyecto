@@ -16,18 +16,43 @@ namespace Proyecto_POO
         {
             InitializeComponent();
         }
-        struct paciente
+        string unidad;
+        public struct paciente
         {
-            String nombre;
+            string nombre;
             int edad;
             string sexo;
             string DPI;
             string Enfermedad;
-            String fechadenac;
+            string fechadenac;
             string noafiliacion;
             string tipoafiliacion;
         }
+        public void aignarpaciente(paciente Paciente)
+        {
 
+        }
+        public void retirarpaciente(paciente Paciente)
+        {
+
+        }
+
+        public void modificarpaciente(paciente Paciente)
+        {
+
+        }
+        public void Buscarpaciente(paciente Paciente)
+        {
+
+        }
+        public void trasladopaciente(paciente Paciente)
+        {
+
+        }
+        public void guardarpaciente(paciente Paciente)
+        {
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Ingreso f = new Ingreso();
