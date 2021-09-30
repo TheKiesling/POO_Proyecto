@@ -23,15 +23,8 @@ public class Hospital
 	}
 
     /*****************************************************************
-     * asignarPaciente: instancia un paciente y lo agrega a la lista de pacientes
-     * @param nombre
-     * @param edad
-     * @param sexo
-     * @param DPI
-     * @param enfermedad
-     * @param fecha_nacimiento
-     * @param numero_afiliacion
-     * @param tipo_afiliacion
+     * asignarPaciente: agrega un paciente a la lista de pacientes
+     * @param paciente
      */
     public void asignarPaciente(Paciente paciente){
         pacientes.Add(paciente);
