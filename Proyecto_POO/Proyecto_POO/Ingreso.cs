@@ -12,11 +12,13 @@ namespace Proyecto_POO
 {
     public partial class Ingreso : Form
     {
-        Hospital hospital = new Hospital();
-        Paciente paciente = null;
+        Hospital hospital;
+        Paciente paciente;
         public Ingreso()
         {
             InitializeComponent();
+            hospital = new Hospital();
+            paciente = null;
         }
 
         private void label1_Click(object sender, EventArgs e)
