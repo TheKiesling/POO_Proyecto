@@ -1,5 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 public class Hospital
 {
@@ -30,5 +37,21 @@ public class Hospital
         pacientes.Add(paciente);
     }
     //****************************************************************
+    public string[] buscar_paciente(string numero_afiliación) {
+        string[] datos=new string[6];
+        foreach (Paciente paciente in pacientes) {
+            if (paciente != null) {                
+                if (paciente.getNumeroAfiliacion() == numero_afiliación) {
+                    datos[0] = paciente.getNombre();
+                    datos[1] = paciente.getFechaNacimiento();
+                    datos[2] = paciente.getSexo();
+                    datos[3] = paciente.getDPI();
+                    datos[4] = paciente.getEnfermedad();
+                    datos[5] = paciente.getTipoAfiliacion();
+                }
+            }
+        }
+        return datos;
+    }
 
 }

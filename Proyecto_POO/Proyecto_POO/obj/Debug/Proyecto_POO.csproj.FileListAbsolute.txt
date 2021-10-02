@@ -3,7 +3,6 @@ C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\bin\Debug\Proyecto_POO.pdb
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.csproj.AssemblyReference.cache
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormBuscar.resources
-C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormIngresoUnidadIGSS.resources
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormInicioSesion.resources
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormRetirar.resources
 C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.Ingreso.resources
@@ -33,3 +32,7 @@ C:\Users\deloz\OneDrive\Escritorio\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\De
 C:\Users\deloz\OneDrive\Escritorio\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.exe
 C:\Users\deloz\OneDrive\Escritorio\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.pdb
 C:\Users\deloz\OneDrive\Escritorio\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormModificarSesion.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormInfo.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormInicio.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormModificarSesion.resources
+C:\Users\Andres\OneDrive\Documents\GitHub\POO_Proyecto\Proyecto_POO\Proyecto_POO\obj\Debug\Proyecto_POO.FormTraslado.resources

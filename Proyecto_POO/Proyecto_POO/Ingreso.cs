@@ -12,12 +12,12 @@ namespace Proyecto_POO
 {
     public partial class Ingreso : Form
     {
-        Hospital hospital;
         Paciente paciente;
-        public Ingreso()
+        Hospital hospital;
+        public Ingreso(Hospital hospital)
         {
             InitializeComponent();
-            hospital = new Hospital();
+            this.hospital = hospital;
             paciente = null;
         }
 
@@ -45,6 +45,9 @@ namespace Proyecto_POO
                 paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion);
                 hospital.asignarPaciente(paciente);
                 ingresoExitoso("Ha podido ingresar de manera correcta");
+                MessageBox.Show("si se pudio");
+                FormMain f = new FormMain();
+                this.Close();//cerrar este form
             }
             else
             {
@@ -65,7 +68,6 @@ namespace Proyecto_POO
         private void button2_Click(object sender, EventArgs e)
         {
             FormMain f = new FormMain();
-            f.Show();//mostrar el form del menú
             this.Close();//cerrar este form
         }
 

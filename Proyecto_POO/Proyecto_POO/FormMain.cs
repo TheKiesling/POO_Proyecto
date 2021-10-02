@@ -12,11 +12,14 @@ namespace Proyecto_POO
 {
     public partial class FormMain : Form
     {
+        Hospital hospital;
         public FormMain()
         {
             InitializeComponent();
+            hospital = new Hospital();
         }
         string unidad;
+        
         public struct paciente
         {
             string nombre;
@@ -55,37 +58,32 @@ namespace Proyecto_POO
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Ingreso f = new Ingreso();
+            Ingreso f = new Ingreso(hospital);
             f.Show();//mostrar form de ingreso
-            this.Hide();//ocultar este form
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             FormRetirar f = new FormRetirar();
             f.Show();//mostrar form de retiro
-            this.Hide();//ocultar este form
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             FormModificar f = new FormModificar();
             f.Show();//mostrar form de modificacion
-            this.Hide();//ocultar este form
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormBuscar f = new FormBuscar();
+            FormBuscar f = new FormBuscar(hospital);
             f.Show();//mostrar form de buscar
-            this.Hide();//ocultar este form
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             FormTraslado f = new FormTraslado();
             f.Show(); //mostrar form de traslado
-            this.Hide();//ocultar este form
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -93,6 +91,11 @@ namespace Proyecto_POO
             FormInicio I = new FormInicio();
             I.Show();//mostrar el form del menú
             this.Close();//cerrar este form
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

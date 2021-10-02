@@ -58,4 +58,31 @@ public class Paciente
         this.enfermedad = nueva_enfermedad;
     }
     //****************************************************************
+    public string getNumeroAfiliacion() {
+        return numero_afiliacion;
+    }
+    public string getNombre()
+    {
+        return nombre;
+    }
+    public string getFechaNacimiento()
+    {
+        return fecha_nacimiento;
+    }
+    public string getSexo()
+    {
+        return sexo;
+    }
+    public string getDPI()
+    {
+        return DPI;
+    }
+    public string getEnfermedad()
+    {
+        return enfermedad;
+    }
+    public string getTipoAfiliacion()
+    {
+        return tipo_afiliacion;
+    }
 }
