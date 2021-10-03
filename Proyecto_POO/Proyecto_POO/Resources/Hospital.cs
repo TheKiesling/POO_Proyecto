@@ -74,4 +74,17 @@ public class Hospital
         }
         return retiro;
     }
+    /*************************************************************************************************
+     * modificar paciente: Modifica un paciente de la lista de pacientes
+     * @param numero_afiliacion
+     */
+    public Boolean modificar_paciente(string numero_afiliación)
+    {
+        Boolean modificar = false;
+        string[] datos = buscar_paciente(numero_afiliación);
+        modificar = retirar_paciente(numero_afiliación);
+        Paciente paciente_modificado = new Paciente(datos[0], datos[1], datos[2], datos[3], datos[4], numero_afiliación, datos[5]);
+        return modificar;
+    }
+
 }
