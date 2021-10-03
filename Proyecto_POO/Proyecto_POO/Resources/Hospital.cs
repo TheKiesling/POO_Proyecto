@@ -65,10 +65,13 @@ public class Hospital
      */
     public Boolean retirar_paciente(string numero_afiliación){
         Boolean retiro = false;
-        foreach (Paciente paciente in pacientes){
-            if (paciente != null){
-                if (paciente.getNumeroAfiliacion() == numero_afiliación){
-                    pacientes.Remove(paciente);
+        for (int i = 0; i < pacientes.Count() && retiro == false;i++){
+            if (pacientes[i] != null)
+            {
+                if (pacientes[i].getNumeroAfiliacion() == numero_afiliación)
+                {
+                    pacientes.Remove(pacientes[i]);
+                    retiro = true;
                 }
             }
         }
