@@ -54,4 +54,15 @@ public class Hospital
         return datos;
     }
 
+    public Boolean retirar_paciente(string numero_afiliación){
+        Boolean retiro = false;
+        foreach (Paciente paciente in pacientes){
+            if (paciente != null){
+                if (paciente.getNumeroAfiliacion() == numero_afiliación){
+                    pacientes.Remove(paciente);
+                }
+            }
+        }
+        return retiro;
+    }
 }
