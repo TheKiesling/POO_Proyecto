@@ -26,9 +26,9 @@ namespace Proyecto_POO
 
         }
 
-        public String ingresoExitoso(String s)
+        public void ingresoExitoso(String s)
         {
-            return s;
+            MessageBox.Show(s);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,7 +45,6 @@ namespace Proyecto_POO
                 paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion);
                 hospital.asignarPaciente(paciente);
                 ingresoExitoso("Ha podido ingresar de manera correcta");
-                MessageBox.Show("si se pudio");
                 FormMain f = new FormMain();
                 this.Close();//cerrar este form
             }
