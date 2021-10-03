@@ -14,10 +14,10 @@ namespace Proyecto_POO
     {
         Hospital hospital;
         Paciente paciente;
-        public FormModificar()
+        public FormModificar(Hospital hospital)
         {
             InitializeComponent();
-            hospital = new Hospital();
+            this.hospital = hospital;
             paciente = null;
         }
 

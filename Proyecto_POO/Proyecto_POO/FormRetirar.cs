@@ -13,7 +13,7 @@ namespace Proyecto_POO
     public partial class FormRetirar : Form
     {
         Hospital hospital;
-        public FormRetirar()
+        public FormRetirar(Hospital hospital)
         {
             InitializeComponent();
             this.hospital = hospital;
@@ -37,7 +37,6 @@ namespace Proyecto_POO
                     //Retiro de paciente exitoso
                     retiroExitoso("Ha podido retirar de manera correcta");
                     MessageBox.Show("Se ha retirado al paciente: "+numero_afiliacion);
-                    FormMain f = new FormMain();
                     this.Close();//cerrar este form
                 }
                 else

@@ -64,13 +64,13 @@ namespace Proyecto_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormRetirar f = new FormRetirar();
+            FormRetirar f = new FormRetirar(hospital);
             f.Show();//mostrar form de retiro
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormModificar f = new FormModificar();
+            FormModificar f = new FormModificar(hospital);
             f.Show();//mostrar form de modificacion
         }
 
