@@ -12,10 +12,10 @@ public class Hospital
 {
     /**
     @author: José Pablo Kiesling Lange
-    Nombre del programa: Paciente.cs
+    Nombre del programa: Hospital.cs
     @version: 
         - Creación: 24/09/2021
-        - Última modificación: 24/09/2021
+        - Última modificación: 03/09/2021
 
     Clase que tiene los métodos y propiedades del hospital para la gestión de pacientes 
      */
@@ -37,6 +37,11 @@ public class Hospital
         pacientes.Add(paciente);
     }
     //****************************************************************
+
+    /****
+     * Buscar Paciente: busca al paciente en la lista de pacientes
+     * @param numero_afiliacion
+     */
     public string[] buscar_paciente(string numero_afiliación) {
         string[] datos=new string[6];
         foreach (Paciente paciente in pacientes) {
@@ -54,6 +59,10 @@ public class Hospital
         return datos;
     }
 
+    /****
+     * Retirar Paciente: retira el paciente de la lista de pacientes
+     * @param numero_afiliacion
+     */
     public Boolean retirar_paciente(string numero_afiliación){
         Boolean retiro = false;
         foreach (Paciente paciente in pacientes){

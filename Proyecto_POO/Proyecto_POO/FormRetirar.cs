@@ -26,6 +26,7 @@ namespace Proyecto_POO
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Numero de afiliacion
             String numero_afiliacion = textBox1.Text;
 
             if (numero_afiliacion != ""){
@@ -33,6 +34,7 @@ namespace Proyecto_POO
 
                 if (retiro == true)
                 {
+                    //Retiro de paciente exitoso
                     retiroExitoso("Ha podido retirar de manera correcta");
                     MessageBox.Show("Se ha retirado al paciente: "+numero_afiliacion);
                     FormMain f = new FormMain();
@@ -40,11 +42,13 @@ namespace Proyecto_POO
                 }
                 else
                 {
+                    //En caso de retiro de paciente no exitoso
                     MessageBox.Show("El paciente: " + numero_afiliacion + ", no esta registrado en el sistema.");
                 }
             }
             else
             {
+                //En caso de que no se haya ingresado un numero de afiliacion
                 retiroExitoso("Por favor ingrese un numero de afiliacion.");
                 MessageBox.Show("Por favor ingrese un numero de afiliacion.");
             }
