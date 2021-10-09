@@ -52,5 +52,10 @@ namespace Proyecto_POO
                 ingresoExitoso("Por favor llene todos los datos");
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
