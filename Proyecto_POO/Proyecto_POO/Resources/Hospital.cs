@@ -59,6 +59,22 @@ public class Hospital
         return datos;
     }
 
+    public Boolean recorrerArreglo(String numero_afiliacion)
+    {
+        Boolean verificacion = false;
+        foreach (Paciente paciente in pacientes)
+        {
+            if (paciente != null)
+            {
+                if (paciente.getNumeroAfiliacion() == numero_afiliacion)
+                {
+                    verificacion = true;
+                }
+            }
+        }
+        return verificacion;
+    }
+
     /****
      * Retirar Paciente: retira el paciente de la lista de pacientes
      * @param numero_afiliacion

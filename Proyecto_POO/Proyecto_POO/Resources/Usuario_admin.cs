@@ -1,7 +1,10 @@
 ﻿using System;
 
-public class Usuario_paciente : Usuario {
-    public Usuario_paciente(String codigo, String contrasena, String tipo)
+public class Usuario_admin : Usuario {
+
+    private Hospital hospital;
+    
+    public Usuario_admin(String codigo, String contrasena, String tipo)
         : base(codigo, contrasena, tipo)
     {
        
@@ -9,30 +12,26 @@ public class Usuario_paciente : Usuario {
     public override bool modificarPaciente(String numeroDeAfiliacion) 
     {
         bool bandera = false;
-        if (this.codigo == numeroDeAfiliacion)
-        {
-            bandera = true;
-        }
+        bandera = hospital.recorrerArreglo(numeroDeAfiliacion);
+
         return bandera;
     }
     public override bool darAltaPaciente(String numeroDeAfiliacion)
     {
         bool bandera = false;
-        if (this.codigo == numeroDeAfiliacion)
-        {
-            bandera = true;
-        }
+        bandera = hospital.recorrerArreglo(numeroDeAfiliacion);
+
         return bandera;
     }
+
     public override bool trasladoPaciente(String numeroDeAfiliacion)
     {
         bool bandera = false;
-        if (this.codigo == numeroDeAfiliacion) 
-        {
-            bandera = true;
-        }
+        bandera = hospital.recorrerArreglo(numeroDeAfiliacion);
+
         return bandera;
     }
+
     public override bool ingresarPaciente()
     {
         return false;

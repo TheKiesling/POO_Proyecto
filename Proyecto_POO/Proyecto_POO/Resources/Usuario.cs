@@ -15,12 +15,14 @@ public abstract class Usuario
     //---------------------------PROPIEDADES-------------------------
     protected String codigo;
     protected String contrasena;
+    protected String tipo;
 
     //-----------------------------MÉTODOS---------------------------
-    public Usuario(String codigo, String contrasena)
+    public Usuario(String codigo, String contrasena, String tipo)
 	{
         this.codigo = codigo;
         this.contrasena = contrasena;
+        this.tipo = tipo;
 	}
 
     public abstract bool modificarPaciente(String numeroDeAfiliacion); //administrador puede cambiar la propia o la de alguien más; paciente solo la propia

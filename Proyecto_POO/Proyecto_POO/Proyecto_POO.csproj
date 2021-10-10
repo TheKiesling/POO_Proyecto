@@ -131,6 +131,7 @@
     <Compile Include="Resources\Hospital.cs" />
     <Compile Include="Resources\Paciente.cs" />
     <Compile Include="Resources\Usuario.cs" />
+    <Compile Include="Resources\Usuario_admin.cs" />
     <Compile Include="Resources\Usuario_paciente.cs" />
     <EmbeddedResource Include="FormBuscar.resx">
       <DependentUpon>FormBuscar.cs</DependentUpon>
