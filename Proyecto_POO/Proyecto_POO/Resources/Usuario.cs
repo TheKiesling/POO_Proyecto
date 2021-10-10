@@ -23,13 +23,13 @@ public abstract class Usuario
         this.contrasena = contrasena;
 	}
 
-    public abstract void modificarPaciente(); //administrador puede cambiar la propia o la de alguien más; paciente solo la propia
+    public abstract bool modificarPaciente(String numeroDeAfiliacion); //administrador puede cambiar la propia o la de alguien más; paciente solo la propia
 
-    public abstract void darAltaPaciente();
+    public abstract bool darAltaPaciente(String numeroDeAfiliacion);
 
-    public abstract void trasladoPaciente();
+    public abstract bool trasladoPaciente(String numeroDeAfiliacion);
 
-    public abstract void ingresarPaciente();
+    public abstract bool ingresarPaciente();
 
     public void cambiarContrasena(String contrasena)
     {

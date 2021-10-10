@@ -6,20 +6,35 @@ public class Usuario_paciente : Usuario {
     {
        
     }
-    public override void modificarPaciente() 
-    { 
-    
-    }
-    public override void darAltaPaciente()
+    public override bool modificarPaciente(String numeroDeAfiliacion) 
     {
-
+        bool bandera = false;
+        if (this.codigo == numeroDeAfiliacion)
+        {
+            bandera = true;
+        }
+        return bandera;
     }
-    public override void trasladoPaciente()
+    public override bool darAltaPaciente(String numeroDeAfiliacion)
     {
-
+        bool bandera = false;
+        if (this.codigo == numeroDeAfiliacion)
+        {
+            bandera = true;
+        }
+        return bandera;
     }
-    public override void ingresarPaciente()
+    public override bool trasladoPaciente(String numeroDeAfiliacion)
     {
-
+        bool bandera = false;
+        if (this.codigo == numeroDeAfiliacion) 
+        {
+            bandera = true;
+        }
+        return bandera;
+    }
+    public override bool ingresarPaciente()
+    {
+        return false;
     }
 }
