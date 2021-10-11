@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace Proyecto_POO
 {
     public partial class Ingreso : Form
@@ -69,8 +69,24 @@ namespace Proyecto_POO
             FormMain f = new FormMain();
             this.Close();//cerrar este form
         }
-
+        
         private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string imagen = openFileDialog1.FileName;
+                    pictureBox1.Image = Image.FromFile(imagen);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }
