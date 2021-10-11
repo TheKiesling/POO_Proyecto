@@ -88,7 +88,18 @@ namespace Proyecto_POO
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string imagen = openFileDialog1.FileName;
+                    pictureBox2.Image = Image.FromFile(imagen);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+            }
         }
     }
 }
