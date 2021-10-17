@@ -12,9 +12,11 @@ namespace Proyecto_POO
 {
     public partial class FormInicioSesion : Form
     {
-        public FormInicioSesion()
+        Hospital hospital;
+        public FormInicioSesion(Hospital hospital)
         {
             InitializeComponent();
+            this.hospital = hospital;
         }
         string nombre, contraseña;
         public string obtenernombre(){  
@@ -23,7 +25,7 @@ namespace Proyecto_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormInicio I = new FormInicio();
+            FormInicio I = new FormInicio(hospital);
             I.Show();//mostrar el form del menú
             this.Close();//cerrar este form
         }
@@ -43,7 +45,7 @@ namespace Proyecto_POO
                 Usuario user=null;
                 if (contraseña == "123POO" && usuario == "ADMIN") {
                     user = new Usuario_admin(usuario, contraseña, "admin");
-                    FormMain m = new FormMain(user);
+                    FormMain m = new FormMain(hospital, user);
                     m.Show();//mostrar el form del menú
                     this.Close();//cerrar este form
                 }
@@ -53,7 +55,7 @@ namespace Proyecto_POO
                 }
                 else{
                     user = new Usuario_paciente(usuario, contraseña, "paciente");
-                    FormMain m = new FormMain(user);
+                    FormMain m = new FormMain(hospital, user);
                     m.Show();//mostrar el form del menú
                     this.Close();//cerrar este form
                 }
@@ -64,7 +66,7 @@ namespace Proyecto_POO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormModificarSesion MS = new FormModificarSesion();
+            FormModificarSesion MS = new FormModificarSesion(hospital);
             MS.Show();//mostrar el form del menú
             this.Hide();//cerrar este form
         }

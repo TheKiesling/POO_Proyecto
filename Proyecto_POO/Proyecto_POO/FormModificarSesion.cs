@@ -12,21 +12,23 @@ namespace Proyecto_POO
 {
     public partial class FormModificarSesion : Form
     {
-        public FormModificarSesion()
+        Hospital hospital;
+        public FormModificarSesion(Hospital hospital)
         {
             InitializeComponent();
+            this.hospital = hospital;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormInicioSesion IS = new FormInicioSesion();
+            FormInicioSesion IS = new FormInicioSesion(hospital);
             IS.Show();//mostrar el form del menú
             this.Close();//cerrar este form
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormInicioSesion IS = new FormInicioSesion();
+            FormInicioSesion IS = new FormInicioSesion(hospital);
             IS.Show();//mostrar el form del menú
             this.Close();//cerrar este form
         }
