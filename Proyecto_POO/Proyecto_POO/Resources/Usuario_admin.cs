@@ -27,10 +27,7 @@ public class Usuario_admin : Usuario {
      */
     public override bool modificarPaciente(String numeroDeAfiliacion) 
     {
-        bool bandera = false;
-        bandera = hospital.recorrerArreglo(numeroDeAfiliacion);
-
-        return bandera;
+        return true;
     }
 
     /****
@@ -39,10 +36,7 @@ public class Usuario_admin : Usuario {
      */
     public override bool darAltaPaciente(String numeroDeAfiliacion)
     {
-        bool bandera = false;
-        bandera = hospital.recorrerArreglo(numeroDeAfiliacion);
-
-        return bandera;
+        return true;
     }
 
     /****
@@ -51,10 +45,7 @@ public class Usuario_admin : Usuario {
      */
     public override bool trasladoPaciente(String numeroDeAfiliacion)
     {
-        bool bandera = false;
-        bandera = hospital.recorrerArreglo(numeroDeAfiliacion);
-
-        return bandera;
+        return true;
     }
 
     /****

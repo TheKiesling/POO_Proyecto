@@ -13,9 +13,10 @@ namespace Proyecto_POO
     public partial class FormInicio : Form
     {
         Hospital hospital;
-        public FormInicio()
+        public FormInicio(Hospital hospital)
         {
             InitializeComponent();
+            this.hospital = hospital;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,10 +38,10 @@ namespace Proyecto_POO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormInicioSesion IS = new FormInicioSesion();
+            FormInicioSesion IS = new FormInicioSesion(hospital);
             IS.Show();//mostrar el form del menú
             this.Hide();//cerrar este form
-            hospital = new Hospital();
+            hospital = new Hospital();//cambiar!!!
 
         }
         public Hospital GetHospital() {

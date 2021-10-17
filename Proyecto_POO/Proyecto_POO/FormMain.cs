@@ -14,10 +14,10 @@ namespace Proyecto_POO
     {
         Hospital hospital;
         Usuario user;
-        public FormMain(Usuario user)
+        public FormMain(Hospital hospital,Usuario user)
         {
             InitializeComponent();
-            hospital = new Hospital();
+            this.hospital = hospital;
             this.user = user;
         }
         string unidad;
@@ -66,7 +66,7 @@ namespace Proyecto_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormRetirar f = new FormRetirar(hospital);
+            FormRetirar f = new FormRetirar(hospital, user);
             f.Show();//mostrar form de retiro
         }
 
@@ -90,7 +90,7 @@ namespace Proyecto_POO
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FormInicio I = new FormInicio();
+            FormInicio I = new FormInicio(hospital);
             I.Show();//mostrar el form del menú
             this.Close();//cerrar este form
         }

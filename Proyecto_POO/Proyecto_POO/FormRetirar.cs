@@ -13,10 +13,12 @@ namespace Proyecto_POO
     public partial class FormRetirar : Form
     {
         Hospital hospital;
-        public FormRetirar(Hospital hospital)
+        Usuario user;
+        public FormRetirar(Hospital hospital, Usuario user)
         {
             InitializeComponent();
             this.hospital = hospital;
+            this.user = user;
         }
 
         public String retiroExitoso(String s)
@@ -30,19 +32,24 @@ namespace Proyecto_POO
             String numero_afiliacion = textBox1.Text;
 
             if (numero_afiliacion != ""){
-                Boolean retiro = hospital.retirar_paciente(numero_afiliacion);
-
-                if (retiro == true)
+                if (user.darAltaPaciente(numero_afiliacion))
                 {
-                    //Retiro de paciente exitoso
-                    retiroExitoso("Ha podido retirar de manera correcta");
-                    MessageBox.Show("Se ha retirado al paciente: "+numero_afiliacion);
-                    this.Close();//cerrar este form
+                    Boolean retiro = hospital.retirar_paciente(numero_afiliacion);
+                    if (retiro == true)
+                    {
+                        //Retiro de paciente exitoso
+                        retiroExitoso("Ha podido retirar de manera correcta");
+                        MessageBox.Show("Se ha retirado al paciente: " + numero_afiliacion);
+                        this.Close();//cerrar este form
+                    }
+                    else
+                    {
+                        //En caso de retiro de paciente no exitoso
+                        MessageBox.Show("El paciente: " + numero_afiliacion + ", no esta registrado en el sistema.");
+                    }
                 }
-                else
-                {
-                    //En caso de retiro de paciente no exitoso
-                    MessageBox.Show("El paciente: " + numero_afiliacion + ", no esta registrado en el sistema.");
+                else{
+                    retiroExitoso("No tiene suficientes permisos para retirar al paciente");
                 }
             }
             else
