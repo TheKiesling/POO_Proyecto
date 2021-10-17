@@ -87,7 +87,7 @@ namespace Proyecto_POO
                     pictureBox1.Image = Image.FromFile(imagen);
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
             }
@@ -103,7 +103,7 @@ namespace Proyecto_POO
                     pictureBox2.Image = Image.FromFile(imagen);
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
             }
