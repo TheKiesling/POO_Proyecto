@@ -14,9 +14,10 @@ namespace Proyecto_POO
         [STAThread]
         static void Main()
         {
+            Hospital hospital = new Hospital();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormInicio());
+            Application.Run(new FormInicio(hospital));
         }
     }
 }

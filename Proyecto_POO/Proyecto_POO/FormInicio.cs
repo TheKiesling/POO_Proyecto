@@ -26,7 +26,7 @@ namespace Proyecto_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormInfo info = new FormInfo();
+            FormInfo info = new FormInfo(hospital);
             info.Show();//mostrar el form del menú
             this.Hide();//cerrar este form
         }
@@ -41,7 +41,6 @@ namespace Proyecto_POO
             FormInicioSesion IS = new FormInicioSesion(hospital);
             IS.Show();//mostrar el form del menú
             this.Hide();//cerrar este form
-            hospital = new Hospital();//cambiar!!!
 
         }
         public Hospital GetHospital() {
