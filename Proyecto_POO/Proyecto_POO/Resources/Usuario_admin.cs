@@ -63,6 +63,6 @@ public class Usuario_admin : Usuario {
      */
     public override bool ingresarPaciente()
     {
-        return false;
+        return true;
     }
 }

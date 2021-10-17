@@ -13,10 +13,12 @@ namespace Proyecto_POO
     public partial class FormMain : Form
     {
         Hospital hospital;
-        public FormMain()
+        Usuario user;
+        public FormMain(Usuario user)
         {
             InitializeComponent();
             hospital = new Hospital();
+            this.user = user;
         }
         string unidad;
         
@@ -58,7 +60,7 @@ namespace Proyecto_POO
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Ingreso f = new Ingreso(hospital);
+            Ingreso f = new Ingreso(hospital,user);
             f.Show();//mostrar form de ingreso
         }
 

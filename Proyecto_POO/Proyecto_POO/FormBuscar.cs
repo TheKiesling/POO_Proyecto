@@ -32,7 +32,6 @@ namespace Proyecto_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormMain f = new FormMain();
             this.Close();//cerrar este form
         }
     }

@@ -14,11 +14,13 @@ namespace Proyecto_POO
     {
         Paciente paciente;
         Hospital hospital;
-        public Ingreso(Hospital hospital)
+        Usuario user;
+        public Ingreso(Hospital hospital, Usuario user)
         {
             InitializeComponent();
             this.hospital = hospital;
             paciente = null;
+            this.user = user;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -42,11 +44,16 @@ namespace Proyecto_POO
             String tipo_afiliacion = textBox7.Text;
             if (nombre != "" || fecha_nacimiento != "" || sexo != "" || dpi != "" || enfermedad != "" || numero_afiliacion != "" || tipo_afiliacion != "")
             {
-                paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion);
-                hospital.asignarPaciente(paciente);
-                ingresoExitoso("Ha podido ingresar de manera correcta");
-                FormMain f = new FormMain();
-                this.Close();//cerrar este form
+                if (user.ingresarPaciente())
+                {
+                    paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion);
+                    hospital.asignarPaciente(paciente);
+                    ingresoExitoso("Ha podido ingresar de manera correcta");
+                    this.Close();//cerrar este form
+                }
+                else {
+                    ingresoExitoso("No tiene suficientes permisos para ingresar a un paciente");
+                }
             }
             else
             {
@@ -66,7 +73,6 @@ namespace Proyecto_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormMain f = new FormMain();
             this.Close();//cerrar este form
         }
         

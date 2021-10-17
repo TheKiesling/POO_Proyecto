@@ -27,12 +27,39 @@ namespace Proyecto_POO
             I.Show();//mostrar el form del menú
             this.Close();//cerrar este form
         }
-
+        private void inicioExitoso(String s) {
+            MessageBox.Show(s);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            FormMain m = new FormMain();
-            m.Show();//mostrar el form del menú
-            this.Close();//cerrar este form
+            string usuario = textBox1.Text;
+            string contraseña = textBox2.Text;
+            if (usuario == "" || contraseña == "")
+            {
+                inicioExitoso("Por favor llenar todos los datos");
+            }
+            else
+            {
+                Usuario user=null;
+                if (contraseña == "123POO" && usuario == "ADMIN") {
+                    user = new Usuario_admin(usuario, contraseña, "admin");
+                    FormMain m = new FormMain(user);
+                    m.Show();//mostrar el form del menú
+                    this.Close();//cerrar este form
+                }
+                else if(contraseña != "123POO" && usuario == "ADMIN")
+                {
+                    inicioExitoso("Contraseña incorrecta");
+                }
+                else{
+                    user = new Usuario_paciente(usuario, contraseña, "paciente");
+                    FormMain m = new FormMain(user);
+                    m.Show();//mostrar el form del menú
+                    this.Close();//cerrar este form
+                }
+                
+                
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

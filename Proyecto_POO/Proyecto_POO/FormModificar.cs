@@ -23,13 +23,12 @@ namespace Proyecto_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormMain f = new FormMain();
             this.Close();//cerrar este form
         }
 
-        public String ingresoExitoso(String s)
+        public void ingresoExitoso(String s)
         {
-            return s;
+            MessageBox.Show(s);
         }
 
         private void button1_Click(object sender, EventArgs e)
