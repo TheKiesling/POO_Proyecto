@@ -40,9 +40,10 @@ namespace Proyecto_POO
             String enfermedad = textBox5.Text;
             String numero_afiliacion = textBox6.Text;
             String tipo_afiliacion = textBox7.Text;
+            String sede = "IGSS";
             if (nombre != "" || fecha_nacimiento != "" || sexo != "" || dpi != "" || enfermedad != "" || numero_afiliacion != "" || tipo_afiliacion != "")
             {
-                paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion);
+                paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion, sede);
                 hospital.asignarPaciente(paciente);
                 ingresoExitoso("Ha podido ingresar de manera correcta");
             }

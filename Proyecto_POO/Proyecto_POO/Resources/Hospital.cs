@@ -43,7 +43,7 @@ public class Hospital
      * @param numero_afiliacion
      */
     public string[] buscar_paciente(string numero_afiliación) {
-        string[] datos=new string[6];
+        string[] datos=new string[7];
         foreach (Paciente paciente in pacientes) {
             if (paciente != null) {                
                 if (paciente.getNumeroAfiliacion() == numero_afiliación) {
@@ -53,6 +53,7 @@ public class Hospital
                     datos[3] = paciente.getDPI();
                     datos[4] = paciente.getEnfermedad();
                     datos[5] = paciente.getTipoAfiliacion();
+                    datos[6] = paciente.getSede();
                 }
             }
         }
@@ -102,8 +103,25 @@ public class Hospital
         Boolean modificar = false;
         string[] datos = buscar_paciente(numero_afiliación);
         modificar = retirar_paciente(numero_afiliación);
-        Paciente paciente_modificado = new Paciente(datos[0], datos[1], datos[2], datos[3], datos[4], numero_afiliación, datos[5]);
+        Paciente paciente_modificado = new Paciente(datos[0], datos[1], datos[2], datos[3], datos[4], numero_afiliación, datos[5], datos[6]);
         return modificar;
     }
 
+    public Boolean trasladoPaciente(string numero_afiliación, string sede)
+    {
+        Boolean traslado = false;
+        foreach (Paciente paciente in pacientes)
+        {
+            if (paciente != null)
+            {
+                if (paciente.getNumeroAfiliacion() == numero_afiliación)
+                {
+                    paciente.setSede(sede);
+                    traslado = true;
+                }
+            }
+        }
+
+        return traslado;
+    }
 }

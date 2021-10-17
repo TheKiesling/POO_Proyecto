@@ -28,11 +28,17 @@ namespace Proyecto_POO
             textBox4.Text = datos[3];
             textBox5.Text = datos[4];
             textBox7.Text = datos[5];
+            textBox6.Text = datos[6];
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();//cerrar este form
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

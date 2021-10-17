@@ -84,7 +84,7 @@ namespace Proyecto_POO
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FormTraslado f = new FormTraslado();
+            FormTraslado f = new FormTraslado(hospital,user);
             f.Show(); //mostrar form de traslado
         }
 

@@ -20,6 +20,7 @@ public class Paciente
     private String enfermedad;
     private String numero_afiliacion;
     private String tipo_afiliacion;
+    private String sede;
 
     /*****************************************************************
      * Paciente: asigna valores a las propiedades por medio de argumentos indicados por el usuario
@@ -31,7 +32,7 @@ public class Paciente
      * @param numero_afiliacion
      * @param tipo_afiliacion
      */
-    public Paciente(String nombre, String fecha_nacimiento, String sexo, String DPI, String enfermedad, String numero_afiliacion, String tipo_afiliacion){
+    public Paciente(String nombre, String fecha_nacimiento, String sexo, String DPI, String enfermedad, String numero_afiliacion, String tipo_afiliacion, String sede){
         this.nombre = nombre;
         this.fecha_nacimiento = fecha_nacimiento;
         this.sexo = sexo;
@@ -39,6 +40,7 @@ public class Paciente
         this.enfermedad = enfermedad;
         this.numero_afiliacion = numero_afiliacion;
         this.tipo_afiliacion = tipo_afiliacion;
+        this.sede = sede;
 	}
     //****************************************************************
 
@@ -84,5 +86,15 @@ public class Paciente
     public string getTipoAfiliacion()
     {
         return tipo_afiliacion;
+    }
+
+    public string getSede()
+    {
+        return this.sede;
+    }
+
+    public void setSede(String sede)
+    {
+        this.sede = sede;
     }
 }
