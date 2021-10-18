@@ -154,9 +154,9 @@ namespace Proyecto_POO
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Location = new System.Drawing.Point(15, 341);
+            this.button1.Location = new System.Drawing.Point(15, 374);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(391, 102);
+            this.button1.Size = new System.Drawing.Size(391, 69);
             this.button1.TabIndex = 12;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = false;
@@ -181,9 +181,9 @@ namespace Proyecto_POO
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(412, 341);
+            this.button2.Location = new System.Drawing.Point(412, 374);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(391, 102);
+            this.button2.Size = new System.Drawing.Size(391, 69);
             this.button2.TabIndex = 15;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;

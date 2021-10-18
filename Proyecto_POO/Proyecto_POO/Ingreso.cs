@@ -43,17 +43,29 @@ namespace Proyecto_POO
             String numero_afiliacion = textBox6.Text;
             String tipo_afiliacion = textBox7.Text;
             String sede = "IGSS";
+            Boolean verificacion = false;
+
             if (nombre != "" || fecha_nacimiento != "" || sexo != "" || dpi != "" || enfermedad != "" || numero_afiliacion != "" || tipo_afiliacion != "")
             {
-                if (user.ingresarPaciente())
+                verificacion = hospital.recorrerArreglo(numero_afiliacion);
+
+                if (verificacion == false)
                 {
-                    paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion, sede);
-                    hospital.asignarPaciente(paciente);
-                    ingresoExitoso("Ha podido ingresar de manera correcta");
-                    this.Close();//cerrar este form
+                    if (user.ingresarPaciente())
+                    {
+                        paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion, sede);
+                        hospital.asignarPaciente(paciente);
+                        ingresoExitoso("Ha podido ingresar de manera correcta");
+                        this.Close();//cerrar este form
+                    }
+                    else
+                    {
+                        ingresoExitoso("No tiene suficientes permisos para ingresar a un paciente");
+                    }
                 }
-                else {
-                    ingresoExitoso("No tiene suficientes permisos para ingresar a un paciente");
+                else
+                {
+                    ingresoExitoso("El paciente ya esta registrado en el sistema");
                 }
             }
             else

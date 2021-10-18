@@ -30,6 +30,7 @@ namespace Proyecto_POO
             MessageBox.Show(s);
         }
 
+        //Modificacion de sesion
         private void button1_Click(object sender, EventArgs e)
         {
             string usuario = textBox1.Text;
@@ -37,23 +38,24 @@ namespace Proyecto_POO
             string usuario2 = textBox4.Text;
             string contraseña2 = textBox3.Text;
 
-            if (usuario == "" || contraseña == "" ||  usuario2 == "" || contraseña2 == "")
-            {
-                inicioExitoso("Por favor llenar todos los datos");
-            }
-            else if (usuario == "" || contraseña == "")
+            //Falta de datos de sesion anterior
+            if (usuario == "" || contraseña == "")
             {
                 inicioExitoso("Por favor llenar todos los datos de su sesion anterior");
             }
+            //Falta de datos de sesion nuevo
             else if (usuario2 == "" || contraseña2 == "")
             {
                 inicioExitoso("Por favor llenar todos los datos de su sesion nueva");
             }
+            //Datos completos
             else
             {
                 Usuario user = null;
+                //Verificacion Admin
                 if (contraseña == "123POO" && usuario == "ADMIN")
                 {
+                    //Cambio Admin
                     user = new Usuario_admin(usuario2, contraseña2, "admin");
                     FormMain m = new FormMain(hospital, user);
                     m.Show();//mostrar el form del menú
@@ -63,6 +65,7 @@ namespace Proyecto_POO
                 {
                     inicioExitoso("Datos de sesion no registrados");
                 }
+                //Cambio Usuario
                 else
                 {
                     user = new Usuario_paciente(usuario2, contraseña2, "paciente");
