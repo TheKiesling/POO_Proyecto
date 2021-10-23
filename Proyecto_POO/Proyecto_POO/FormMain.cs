@@ -90,9 +90,12 @@ namespace Proyecto_POO
 
         private void button6_Click(object sender, EventArgs e)
         {
+            SQL.Connection connection = new SQL.Connection();
+            connection.Connect();
             FormInicio I = new FormInicio(hospital);
             I.Show();//mostrar el form del menú
             this.Close();//cerrar este form
+
         }
 
         private void FormMain_Load(object sender, EventArgs e)

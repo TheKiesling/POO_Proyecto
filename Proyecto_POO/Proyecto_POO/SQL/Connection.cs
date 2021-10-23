@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Proyecto_POO.SQL
 {
@@ -17,5 +18,19 @@ namespace Proyecto_POO.SQL
         private static string password = "";
 
         private string connect = "server=" + server + ";" + "user=" + user + ";" + "password=" + password + ";" + "database=" + database + ";";
+
+        public MySqlConnection Connect()
+        {
+            try
+            {
+                connection.ConnectionString = connect;
+                connection.Open();
+                MessageBox.Show("Conexión exitosa");
+            } catch (MySqlException e)
+            {
+                MessageBox.Show("Error en la conexión de base de datos");
+            }
+            return connection;
+        }
     }
 }
