@@ -45,9 +45,12 @@ namespace Proyecto_POO
                 Usuario user=null;
                 if (contraseña == "123POO" && usuario == "ADMIN") {
                     user = new Usuario_admin(usuario, contraseña, "admin");
-                    FormMain m = new FormMain(hospital, user);
+                    SQL.Connection connection = new SQL.Connection();
+                    connection.Connect();
+                    FormMain m = new FormMain(hospital, user, connection);
                     m.Show();//mostrar el form del menú
                     this.Close();//cerrar este form
+                    
                 }
                 else if(contraseña != "123POO" && usuario == "ADMIN")
                 {
@@ -55,9 +58,12 @@ namespace Proyecto_POO
                 }
                 else{
                     user = new Usuario_paciente(usuario, contraseña, "paciente");
-                    FormMain m = new FormMain(hospital, user);
+                    SQL.Connection connection = new SQL.Connection();
+                    connection.Connect();
+                    FormMain m = new FormMain(hospital, user, connection);
                     m.Show();//mostrar el form del menú
                     this.Close();//cerrar este form
+                    
                 }
                 
                 

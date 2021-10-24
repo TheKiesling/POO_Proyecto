@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace Proyecto_POO
@@ -14,11 +15,13 @@ namespace Proyecto_POO
     {
         Hospital hospital;
         Usuario user;
-        public FormMain(Hospital hospital,Usuario user)
+        SQL.Connection connection;
+        public FormMain(Hospital hospital,Usuario user, SQL.Connection connection)
         {
             InitializeComponent();
             this.hospital = hospital;
             this.user = user;
+            this.connection = connection;
         }
         string unidad;
         
@@ -60,7 +63,7 @@ namespace Proyecto_POO
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Ingreso f = new Ingreso(hospital,user);
+            Ingreso f = new Ingreso(hospital,user, connection);
             f.Show();//mostrar form de ingreso
         }
 
@@ -90,8 +93,6 @@ namespace Proyecto_POO
 
         private void button6_Click(object sender, EventArgs e)
         {
-            SQL.Connection connection = new SQL.Connection();
-            connection.Connect();
             FormInicio I = new FormInicio(hospital);
             I.Show();//mostrar el form del menú
             this.Close();//cerrar este form
