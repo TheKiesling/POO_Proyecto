@@ -13,10 +13,12 @@ namespace Proyecto_POO
     public partial class FormModificarSesion : Form
     {
         Hospital hospital;
-        public FormModificarSesion(Hospital hospital)
+        SQL.Connection connection;
+        public FormModificarSesion(Hospital hospital, SQL.Connection connection)
         {
             InitializeComponent();
             this.hospital = hospital;
+            this.connection = connection;
         }
 
         string nombre, contraseña;
@@ -57,7 +59,7 @@ namespace Proyecto_POO
                 {
                     //Cambio Admin
                     user = new Usuario_admin(usuario2, contraseña2, "admin");
-                    FormMain m = new FormMain(hospital, user);
+                    FormMain m = new FormMain(hospital, user,connection);
                     m.Show();//mostrar el form del menú
                     this.Close();//cerrar este form
                 }
@@ -69,7 +71,7 @@ namespace Proyecto_POO
                 else
                 {
                     user = new Usuario_paciente(usuario2, contraseña2, "paciente");
-                    FormMain m = new FormMain(hospital, user);
+                    FormMain m = new FormMain(hospital, user, connection);
                     m.Show();//mostrar el form del menú
                     this.Close();//cerrar este form
                 }

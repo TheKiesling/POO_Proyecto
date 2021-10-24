@@ -13,6 +13,7 @@ namespace Proyecto_POO
     public partial class FormInicioSesion : Form
     {
         Hospital hospital;
+        SQL.Connection connection = new SQL.Connection();
         public FormInicioSesion(Hospital hospital)
         {
             InitializeComponent();
@@ -45,8 +46,6 @@ namespace Proyecto_POO
                 Usuario user=null;
                 if (contraseña == "123POO" && usuario == "ADMIN") {
                     user = new Usuario_admin(usuario, contraseña, "admin");
-                    SQL.Connection connection = new SQL.Connection();
-                    connection.Connect();
                     FormMain m = new FormMain(hospital, user, connection);
                     m.Show();//mostrar el form del menú
                     this.Close();//cerrar este form
@@ -58,7 +57,6 @@ namespace Proyecto_POO
                 }
                 else{
                     user = new Usuario_paciente(usuario, contraseña, "paciente");
-                    SQL.Connection connection = new SQL.Connection();
                     connection.Connect();
                     FormMain m = new FormMain(hospital, user, connection);
                     m.Show();//mostrar el form del menú
@@ -72,7 +70,7 @@ namespace Proyecto_POO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormModificarSesion MS = new FormModificarSesion(hospital);
+            FormModificarSesion MS = new FormModificarSesion(hospital,connection);
             MS.Show();//mostrar el form del menú
             this.Hide();//cerrar este form
         }
