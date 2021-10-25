@@ -52,14 +52,18 @@ namespace Proyecto_POO
 
             if (nombre != "" || fecha_nacimiento != "" || sexo != "" || dpi != "" || enfermedad != "" || numero_afiliacion != "" || tipo_afiliacion != "")
             {
+                //Verificacion de Paciente dentro del sistema
                 verificacion = hospital.recorrerArreglo(numero_afiliacion);
 
                 if (verificacion == false)
                 {
                     if (user.ingresarPaciente())
                     {
+                        //Creacion del Paciente
                         paciente = new Paciente(nombre, fecha_nacimiento, sexo, dpi, enfermedad, numero_afiliacion, tipo_afiliacion, sede);
+                        //Asignacion del Paciente
                         hospital.asignarPaciente(paciente);
+                        //Insercion de datos de Paciente en la base de datos
                         string query = "INSERT INTO paciente (nombre,tipo_afiliacion,sexo,dpi,enfermedad,fecha_nacimiento,no_afiliacion,sede) VALUES (@nombre,@tipo_afiliacion,@sexo,@dpi,@enfermedad,@fecha_nacimiento,@no_afiliacion,@sede)";
                         MySqlCommand comando = new MySqlCommand(query, connection.Connect());
                         comando.Parameters.AddWithValue("@nombre", nombre);
@@ -71,16 +75,19 @@ namespace Proyecto_POO
                         comando.Parameters.AddWithValue("@no_afiliacion", numero_afiliacion);
                         comando.Parameters.AddWithValue("@sede", sede);
                         comando.ExecuteNonQuery();
+                        //Mensaje de ingreso exitoso
                         ingresoExitoso("Ha podido ingresar de manera correcta");
                         this.Close();//cerrar este form
                     }
                     else
                     {
+                        //En caso de no tener los permisos de Admin
                         ingresoExitoso("No tiene suficientes permisos para ingresar a un paciente");
                     }
                 }
                 else
                 {
+                    //En caso de que el Paciente ya haya sido ingresado
                     ingresoExitoso("El paciente ya esta registrado en el sistema");
                 }
             }
