@@ -33,20 +33,26 @@ namespace Proyecto_POO
         {
             //Numero de afiliacion
             String numero_afiliacion = textBox1.Text;
+            MySqlConnection connectionb = new MySqlConnection();
+            connectionb.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
+            connectionb.Open();
+            String query = "select * from paciente where no_afiliacion='" + numero_afiliacion + "'";
+            MySqlCommand comando = new MySqlCommand();
+            comando.Connection = connectionb;
+            comando.CommandText = query;
+            MySqlDataReader myReader = comando.ExecuteReader();
+            connectionb.Close();
 
             if (numero_afiliacion != ""){
                 if (user.darAltaPaciente(numero_afiliacion))
                 {
-                    Boolean retiro = hospital.retirar_paciente(numero_afiliacion);
-                    if (retiro == true)
-                    {
                         //Retiro de paciente exitos
-                        string query = "DELETE FROM paciente WHERE numero_afiliacion=@numero_afiliacion";
-                        MySqlCommand comando = new MySqlCommand(query, connection.Connect());
+                        string queryd = "DELETE FROM paciente WHERE no_afiliacion='" +numero_afiliacion+"'";
+                        MySqlCommand comandod = new MySqlCommand(queryd, connection.Connect());
                         try
                         {
-                            comando.Parameters.AddWithValue("@numero_afiliacion", numero_afiliacion);
-                            comando.ExecuteNonQuery();
+                            comandod.Parameters.AddWithValue("@no_afiliacion", numero_afiliacion);
+                            comandod.ExecuteNonQuery();
                             retiroExitoso("Ha podido retirar de manera correcta");
                         }
                         catch (MySqlException ex) 
@@ -55,12 +61,6 @@ namespace Proyecto_POO
                         }
                         
                         this.Close();//cerrar este form
-                    }
-                    else
-                    {
-                        //En caso de retiro de paciente no exitoso
-                        MessageBox.Show("El paciente: " + numero_afiliacion + ", no esta registrado en el sistema.");
-                    }
                 }
                 else{
                     retiroExitoso("No tiene suficientes permisos para retirar al paciente");
@@ -72,6 +72,7 @@ namespace Proyecto_POO
                 retiroExitoso("Por favor ingrese un numero de afiliacion.");
                 MessageBox.Show("Por favor ingrese un numero de afiliacion.");
             }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)

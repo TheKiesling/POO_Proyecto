@@ -64,7 +64,7 @@ namespace Proyecto_POO
                         //Asignacion del Paciente
                         hospital.asignarPaciente(paciente);
                         //Insercion de datos de Paciente en la base de datos
-                        string query = "UPDATE paciente SET nombre=@nombre, tipo_afiliacion=@tipo_afiliacion, sexo=@sexo, dpi=@dpi, enfermedad=@enfermedad, fecha_nacimiento=@fecha_nacimiento, sede=@sede WHERE numero_afiliacion=@numero_afiliacion";
+                        string query = "UPDATE paciente SET nombre=@nombre, tipo_afiliacion=@tipo_afiliacion, sexo=@sexo, dpi=@dpi, enfermedad=@enfermedad, fecha_nacimiento=@fecha_nacimiento, sede=@sede WHERE no_afiliacion=@numero_afiliacion";
                         MySqlCommand comando = new MySqlCommand(query, connection.Connect());
                         comando.Parameters.AddWithValue("@nombre", nombre);
                         comando.Parameters.AddWithValue("@tipo_afiliacion", tipo_afiliacion);
@@ -116,6 +116,12 @@ namespace Proyecto_POO
                 {
                     while (myReader.Read())
                     {
+                        textBox1.ReadOnly = false;
+                        textBox2.ReadOnly = false;
+                        textBox3.ReadOnly = false;
+                        textBox4.ReadOnly = false;
+                        textBox5.ReadOnly = false;
+                        textBox7.ReadOnly = false;
                         myReader.Read();
                         textBox1.Text = myReader["nombre"].ToString();
                         textBox2.Text = myReader["fecha_nacimiento"].ToString();
