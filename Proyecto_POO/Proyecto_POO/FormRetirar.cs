@@ -51,7 +51,6 @@ namespace Proyecto_POO
                         MySqlCommand comandod = new MySqlCommand(queryd, connection.Connect());
                         try
                         {
-                            comandod.Parameters.AddWithValue("@no_afiliacion", numero_afiliacion);
                             comandod.ExecuteNonQuery();
                             retiroExitoso("Ha podido retirar de manera correcta");
                         }

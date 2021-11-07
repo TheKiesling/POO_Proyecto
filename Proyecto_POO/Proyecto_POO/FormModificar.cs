@@ -74,9 +74,16 @@ namespace Proyecto_POO
                         comando.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
                         comando.Parameters.AddWithValue("@sede", sede);
                         comando.Parameters.AddWithValue("@numero_afiliacion", numero_afiliacion);
-                        comando.ExecuteNonQuery();
-                        //Mensaje de ingreso exitoso
-                        ingresoExitoso("Ha podido ingresar de manera correcta");
+                        try
+                        {
+                            comando.ExecuteNonQuery();
+                            //Mensaje de ingreso exitoso
+                            ingresoExitoso("Ha podido ingresar de manera correcta");
+                        }
+                        catch(Exception ex)
+                        {
+                            ingresoExitoso("Error de tipo: " + ex);
+                        }
                         this.Close();//cerrar este form
                     }
                     else
