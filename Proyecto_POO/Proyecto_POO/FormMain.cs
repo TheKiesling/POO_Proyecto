@@ -69,7 +69,7 @@ namespace Proyecto_POO
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormRetirar f = new FormRetirar(hospital, user);
+            FormRetirar f = new FormRetirar(hospital, user, connection);
             f.Show();//mostrar form de retiro
         }
 

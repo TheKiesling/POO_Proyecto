@@ -15,11 +15,13 @@ namespace Proyecto_POO
     {
         Hospital hospital;
         Usuario user;
-        public FormRetirar(Hospital hospital, Usuario user)
+        SQL.Connection connection;
+        public FormRetirar(Hospital hospital, Usuario user, SQL.Connection connection)
         {
             InitializeComponent();
             this.hospital = hospital;
             this.user = user;
+            this.connection = connection;
         }
 
         public void retiroExitoso(String s)
@@ -38,8 +40,19 @@ namespace Proyecto_POO
                     Boolean retiro = hospital.retirar_paciente(numero_afiliacion);
                     if (retiro == true)
                     {
-                        //Retiro de paciente exitoso
-                        retiroExitoso("Ha podido retirar de manera correcta");
+                        //Retiro de paciente exitos
+                        string query = "DELETE FROM paciente WHERE numero_afiliacion=@numero_afiliacion";
+                        MySqlCommand comando = new MySqlCommand(query, connection.Connect());
+                        try
+                        {
+                            comando.Parameters.AddWithValue("@numero_afiliacion", numero_afiliacion);
+                            comando.ExecuteNonQuery();
+                            retiroExitoso("Ha podido retirar de manera correcta");
+                        }
+                        catch (MySqlException ex) 
+                        {
+                            retiroExitoso("Error de tipo: " + ex);
+                        }
                         
                         this.Close();//cerrar este form
                     }

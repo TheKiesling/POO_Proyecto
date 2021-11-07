@@ -102,21 +102,32 @@ namespace Proyecto_POO
 
             if (textBox8.Text != "")
             {
-                string[] datos = hospital.buscar_paciente(textBox8.Text);
-                textBox1.Text = datos[0];
-                textBox2.Text = datos[1];
-                textBox3.Text = datos[2];
-                textBox4.Text = datos[3];
-                textBox5.Text = datos[4];
-                textBox7.Text = datos[5];
-                if (datos.Contains<string>("") || textBox1.Text == "")
+                String numero_afiliacion = textBox8.Text;
+                MySqlConnection connection = new MySqlConnection();
+                connection.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
+                connection.Open();
+                String query = "select * from paciente where no_afiliacion='" + numero_afiliacion + "'";
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = connection;
+                comando.CommandText = query;
+                MySqlDataReader myReader = comando.ExecuteReader();
+
+                if (myReader.HasRows)
                 {
-                    MessageBox.Show("No se ha podido encontrar");
+                    while (myReader.Read())
+                    {
+                        myReader.Read();
+                        textBox1.Text = myReader["nombre"].ToString();
+                        textBox2.Text = myReader["fecha_nacimiento"].ToString();
+                        textBox3.Text = myReader["sexo"].ToString();
+                        textBox4.Text = myReader["dpi"].ToString();
+                        textBox5.Text = myReader["enfermedad"].ToString();
+                        textBox7.Text = myReader["tipo_afiliacion"].ToString();
+
+
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Se ha podido encontrar al paciente correctamente");
-                }
+                connection.Close();
             }
             else
             {
