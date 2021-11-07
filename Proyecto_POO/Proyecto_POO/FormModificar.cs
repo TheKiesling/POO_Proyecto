@@ -45,7 +45,7 @@ namespace Proyecto_POO
             String sexo = textBox3.Text;
             String dpi = textBox4.Text;
             String enfermedad = textBox5.Text;
-            String numero_afiliacion = textBox6.Text;
+            String numero_afiliacion = textBox8.Text;
             String tipo_afiliacion = textBox7.Text;
             String sede = "IGSS";
             Boolean verificacion = false;
@@ -64,7 +64,7 @@ namespace Proyecto_POO
                         //Asignacion del Paciente
                         hospital.asignarPaciente(paciente);
                         //Insercion de datos de Paciente en la base de datos
-                        string query = "INSERT INTO paciente (nombre,tipo_afiliacion,sexo,dpi,enfermedad,fecha_nacimiento,no_afiliacion,sede) VALUES (@nombre,@tipo_afiliacion,@sexo,@dpi,@enfermedad,@fecha_nacimiento,@no_afiliacion,@sede)";
+                        string query = "UPDATE paciente SET nombre=@nombre, tipo_afiliacion=@tipo_afiliacion, sexo=@sexo, dpi=@dpi, enfermedad=@enfermedad, fecha_nacimiento=@fecha_nacimiento, sede=@sede WHERE numero_afiliacion=@numero_afiliacion";
                         MySqlCommand comando = new MySqlCommand(query, connection.Connect());
                         comando.Parameters.AddWithValue("@nombre", nombre);
                         comando.Parameters.AddWithValue("@tipo_afiliacion", tipo_afiliacion);
@@ -72,8 +72,8 @@ namespace Proyecto_POO
                         comando.Parameters.AddWithValue("@dpi", dpi);
                         comando.Parameters.AddWithValue("@enfermedad", enfermedad);
                         comando.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
-                        comando.Parameters.AddWithValue("@no_afiliacion", numero_afiliacion);
                         comando.Parameters.AddWithValue("@sede", sede);
+                        comando.Parameters.AddWithValue("@numero_afiliacion", numero_afiliacion);
                         comando.ExecuteNonQuery();
                         //Mensaje de ingreso exitoso
                         ingresoExitoso("Ha podido ingresar de manera correcta");
@@ -100,7 +100,7 @@ namespace Proyecto_POO
         private void button6_Click(object sender, EventArgs e)
         {
 
-            if (textBox8.Text == "")
+            if (textBox8.Text != "")
             {
                 string[] datos = hospital.buscar_paciente(textBox8.Text);
                 textBox1.Text = datos[0];
@@ -109,7 +109,6 @@ namespace Proyecto_POO
                 textBox4.Text = datos[3];
                 textBox5.Text = datos[4];
                 textBox7.Text = datos[5];
-                textBox6.Text = datos[6];
                 if (datos.Contains<string>("") || textBox1.Text == "")
                 {
                     MessageBox.Show("No se ha podido encontrar");

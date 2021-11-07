@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Proyecto_POO
 {
@@ -21,9 +22,9 @@ namespace Proyecto_POO
             this.user = user;
         }
 
-        public String retiroExitoso(String s)
+        public void retiroExitoso(String s)
         {
-            return s;
+            MessageBox.Show(s);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace Proyecto_POO
                     {
                         //Retiro de paciente exitoso
                         retiroExitoso("Ha podido retirar de manera correcta");
-                        MessageBox.Show("Se ha retirado al paciente: " + numero_afiliacion);
+                        
                         this.Close();//cerrar este form
                     }
                     else
