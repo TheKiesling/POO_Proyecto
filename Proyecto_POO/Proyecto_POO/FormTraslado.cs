@@ -42,56 +42,51 @@ namespace Proyecto_POO
         {
             //Numero de afiliacion
             String numero_afiliacion = textBox2.Text;
+            //Nueva sede de traslado
             String sede = textBox1.Text;
 
-            MySqlConnection connectionb = new MySqlConnection();
-            connectionb.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
-            connectionb.Open();
-            String query = "select * from paciente where no_afiliacion='" + numero_afiliacion + "'";
-            MySqlCommand comando = new MySqlCommand();
-            comando.Connection = connectionb;
-            comando.CommandText = query;
-            MySqlDataReader myReader = comando.ExecuteReader();
-            connectionb.Close();
-
-            String nom = myReader["nombre"].ToString();
-            String fec = myReader["fecha_nacimiento"].ToString();
-            String sex = myReader["sexo"].ToString();
-            String dpi = myReader["dpi"].ToString();
-            String enf = myReader["enfermedad"].ToString();
-            String tip = myReader["tipo_afiliacion"].ToString();
-
+            //Se verifica que haya un id ingresado
             if (numero_afiliacion != "")
             {
+                //Conexion a db
+                MySqlConnection connectionb = new MySqlConnection();
+                connectionb.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
+                connectionb.Open();
+                String query = "select * from paciente where no_afiliacion='" + numero_afiliacion + "'";
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = connectionb;
+                comando.CommandText = query;
+                MySqlDataReader myReader = comando.ExecuteReader();
+                connectionb.Close();
+
+                //Se guardan los datos que no seran modificados
+                String nom = myReader["nombre"].ToString();
+                String fec = myReader["fecha_nacimiento"].ToString();
+                String sex = myReader["sexo"].ToString();
+                String dpi = myReader["dpi"].ToString();
+                String enf = myReader["enfermedad"].ToString();
+                String tip = myReader["tipo_afiliacion"].ToString();
+
+                //Verificacion de traslado
                 if (user.trasladoPaciente(numero_afiliacion))
                 {
-                    Boolean traslado = hospital.trasladoPaciente(numero_afiliacion,sede);
 
+                    //Se realiza la actualizacion de los datos (solo cambia sede)
                     String querym = "UPDATE paciente SET nombre='" + nom + "', fecha_nacimiento='" + fec + "', sexo='"+sex+"', dpi='"+dpi+"', enfermedad='"+enf+"', sede='"+sede+"', tipo_afiliacion='"+tip+"' WHERE no_afiliacion='"+numero_afiliacion+"'";
-
                     MySqlCommand comandod = new MySqlCommand(querym, connection.Connect());
                     try
                     {
                         comandod.ExecuteNonQuery();
                         trasladoExitoso("Ha podido trasladar de manera correcta");
+                        MessageBox.Show("Se ha trasladado al paciente: " + numero_afiliacion);
                     }
                     catch (MySqlException ex)
                     {
                         trasladoExitoso("Error de tipo: " + ex);
+                        MessageBox.Show("El paciente: " + numero_afiliacion + ", no ha podido ser trasladado.");
                     }
 
-                    if (traslado == true)
-                    {
-                        //Traslado de paciente exitoso
-                        trasladoExitoso("Ha podido trasladar de manera correcta");
-                        MessageBox.Show("Se ha trasladado al paciente: " + numero_afiliacion);
-                        this.Close();//cerrar este form
-                    }
-                    else
-                    {
-                        //En caso de retiro de paciente no exitoso
-                        MessageBox.Show("El paciente: " + numero_afiliacion + ", no esta registrado en el sistema.");
-                    }
+                    this.Close();//cerrar este form
                 }
                 else
                 {
