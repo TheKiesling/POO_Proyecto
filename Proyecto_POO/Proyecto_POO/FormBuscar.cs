@@ -15,22 +15,27 @@ namespace Proyecto_POO
     {
         Hospital hospital;
         SQL.Connection connection;
-        public FormBuscar(Hospital hospital, SQL.Connection connection)
+        String tipo;
+        public FormBuscar(Hospital hospital, SQL.Connection connection, String t)
         {
             InitializeComponent();
+
             this.hospital = hospital;
             this.connection = connection;
+            tipo = t;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String numero_afiliacion = textBox8.Text;
-            MySqlConnection connection = new MySqlConnection();
-            connection.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
-            connection.Open();
+            if (tipo == "admin")
+            {
+                String numero_afiliacion = textBox8.Text;
+                MySqlConnection connection = new MySqlConnection();
+                connection.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
+                connection.Open();
                 String query = "select * from paciente where no_afiliacion='" + numero_afiliacion + "'";
                 MySqlCommand comando = new MySqlCommand();
-            comando.Connection = connection;
+                comando.Connection = connection;
                 comando.CommandText = query;
                 MySqlDataReader myReader = comando.ExecuteReader();
 
@@ -50,8 +55,14 @@ namespace Proyecto_POO
 
                     }
                 }
-            connection.Close();
-            
+                connection.Close();
+            }
+            else
+                errorususario("Un paciente no puede buscar informacion de otros");   
+        }
+        private void errorususario(String s)
+        {
+            MessageBox.Show(s);
         }
 
         private void button2_Click(object sender, EventArgs e)

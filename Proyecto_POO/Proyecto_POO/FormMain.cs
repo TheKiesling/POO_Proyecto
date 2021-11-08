@@ -81,7 +81,7 @@ namespace Proyecto_POO
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormBuscar f = new FormBuscar(hospital, connection);
+            FormBuscar f = new FormBuscar(hospital, connection, user.clasedeusuario());
             f.Show();//mostrar form de buscar
         }
 

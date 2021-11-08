@@ -37,4 +37,8 @@ public abstract class Usuario
     {
         this.contrasena = contrasena;
     }
+    public String clasedeusuario()
+    {
+        return tipo;
+    }
 }
