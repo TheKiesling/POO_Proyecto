@@ -7,18 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace Proyecto_POO
 {
     public partial class FormTraslado : Form
     {
+        Paciente paciente;
         Hospital hospital;
         Usuario user;
+        SQL.Connection connection;
+
         public FormTraslado(Hospital hospital, Usuario user)
         {
             InitializeComponent();
             this.hospital = hospital;
+            paciente = null;
             this.user = user;
+            this.connection = connection;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,15 +44,46 @@ namespace Proyecto_POO
             String numero_afiliacion = textBox2.Text;
             String sede = textBox1.Text;
 
+            MySqlConnection connectionb = new MySqlConnection();
+            connectionb.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
+            connectionb.Open();
+            String query = "select * from paciente where no_afiliacion='" + numero_afiliacion + "'";
+            MySqlCommand comando = new MySqlCommand();
+            comando.Connection = connectionb;
+            comando.CommandText = query;
+            MySqlDataReader myReader = comando.ExecuteReader();
+            connectionb.Close();
+
+            String nom = myReader["nombre"].ToString();
+            String fec = myReader["fecha_nacimiento"].ToString();
+            String sex = myReader["sexo"].ToString();
+            String dpi = myReader["dpi"].ToString();
+            String enf = myReader["enfermedad"].ToString();
+            String tip = myReader["tipo_afiliacion"].ToString();
+
             if (numero_afiliacion != "")
             {
                 if (user.trasladoPaciente(numero_afiliacion))
                 {
                     Boolean traslado = hospital.trasladoPaciente(numero_afiliacion,sede);
+
+                    String querym = "UPDATE paciente SET nombre='" + nom + "', fecha_nacimiento='" + fec + "', sexo='"+sex+"', dpi='"+dpi+"', enfermedad='"+enf+"', sede='"+sede+"', tipo_afiliacion='"+tip+"' WHERE no_afiliacion='"+numero_afiliacion+"'";
+
+                    MySqlCommand comandod = new MySqlCommand(querym, connection.Connect());
+                    try
+                    {
+                        comandod.ExecuteNonQuery();
+                        trasladoExitoso("Ha podido trasladar de manera correcta");
+                    }
+                    catch (MySqlException ex)
+                    {
+                        trasladoExitoso("Error de tipo: " + ex);
+                    }
+
                     if (traslado == true)
                     {
                         //Traslado de paciente exitoso
-                        trasladoExitoso("Ha podido retirar de manera correcta");
+                        trasladoExitoso("Ha podido trasladar de manera correcta");
                         MessageBox.Show("Se ha trasladado al paciente: " + numero_afiliacion);
                         this.Close();//cerrar este form
                     }
