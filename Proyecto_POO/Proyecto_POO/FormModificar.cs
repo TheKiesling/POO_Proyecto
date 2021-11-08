@@ -106,45 +106,52 @@ namespace Proyecto_POO
 
         private void button6_Click(object sender, EventArgs e)
         {
-
-            if (textBox8.Text != "")
+            if (user.clasedeusuario() == "admin")
             {
-                String numero_afiliacion = textBox8.Text;
-                MySqlConnection connection = new MySqlConnection();
-                connection.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
-                connection.Open();
-                String query = "select * from paciente where no_afiliacion='" + numero_afiliacion + "'";
-                MySqlCommand comando = new MySqlCommand();
-                comando.Connection = connection;
-                comando.CommandText = query;
-                MySqlDataReader myReader = comando.ExecuteReader();
 
-                if (myReader.HasRows)
+                if (textBox8.Text != "")
                 {
-                    while (myReader.Read())
+                    String numero_afiliacion = textBox8.Text;
+                    MySqlConnection connection = new MySqlConnection();
+                    connection.ConnectionString = "server=" + "localhost" + ";" + "user=" + "root" + ";" + "password=" + "" + ";" + "database=" + "sgh" + ";";
+                    connection.Open();
+                    String query = "select * from paciente where no_afiliacion='" + numero_afiliacion + "'";
+                    MySqlCommand comando = new MySqlCommand();
+                    comando.Connection = connection;
+                    comando.CommandText = query;
+                    MySqlDataReader myReader = comando.ExecuteReader();
+
+                    if (myReader.HasRows)
                     {
-                        textBox1.ReadOnly = false;
-                        textBox2.ReadOnly = false;
-                        textBox3.ReadOnly = false;
-                        textBox4.ReadOnly = false;
-                        textBox5.ReadOnly = false;
-                        textBox7.ReadOnly = false;
-                        myReader.Read();
-                        textBox1.Text = myReader["nombre"].ToString();
-                        textBox2.Text = myReader["fecha_nacimiento"].ToString();
-                        textBox3.Text = myReader["sexo"].ToString();
-                        textBox4.Text = myReader["dpi"].ToString();
-                        textBox5.Text = myReader["enfermedad"].ToString();
-                        textBox7.Text = myReader["tipo_afiliacion"].ToString();
+                        while (myReader.Read())
+                        {
+                            textBox1.ReadOnly = false;
+                            textBox2.ReadOnly = false;
+                            textBox3.ReadOnly = false;
+                            textBox4.ReadOnly = false;
+                            textBox5.ReadOnly = false;
+                            textBox7.ReadOnly = false;
+                            myReader.Read();
+                            textBox1.Text = myReader["nombre"].ToString();
+                            textBox2.Text = myReader["fecha_nacimiento"].ToString();
+                            textBox3.Text = myReader["sexo"].ToString();
+                            textBox4.Text = myReader["dpi"].ToString();
+                            textBox5.Text = myReader["enfermedad"].ToString();
+                            textBox7.Text = myReader["tipo_afiliacion"].ToString();
 
 
+                        }
                     }
+                    connection.Close();
                 }
-                connection.Close();
+                else
+                {
+                    MessageBox.Show("Por favor ingrese un numero de afiliacion.");
+                }
             }
             else
             {
-                MessageBox.Show("Por favor ingrese un numero de afiliacion.");
+                MessageBox.Show("Un paciente no puede modificar informacion de otros");
             }
         }
     }

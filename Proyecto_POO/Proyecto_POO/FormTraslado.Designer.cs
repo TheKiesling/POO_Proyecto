@@ -107,6 +107,7 @@ namespace Proyecto_POO
             this.Controls.Add(this.label1);
             this.Name = "FormTraslado";
             this.Text = "Traslado de Paciente";
+            this.Load += new System.EventHandler(this.FormTraslado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

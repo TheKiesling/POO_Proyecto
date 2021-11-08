@@ -56,6 +56,7 @@ namespace Proyecto_POO
                     }
                 }
                 connection.Close();
+               
             }
             else
                 errorususario("Un paciente no puede buscar informacion de otros");   
